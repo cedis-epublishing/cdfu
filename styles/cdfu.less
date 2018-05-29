@@ -1,6 +1,6 @@
 //@bg-border-color: transparent;  // Make all border colors transparent
 
-@myurl: "plugins/themes/cdfu";
+@plugin-url: "plugins/themes/cdfu";
 
 
 .pkp_head_wrapper {
@@ -26,11 +26,12 @@
 #fu_identity p a {
 	color:#333;
 	text-decoration:none;
+	text-transform: uppercase;	
 }
 
 @media(min-width: 0px) {
 	#fu_logo {
-		background-image: url("/@{myurl}/images/fu-logo-text-2x_226_17.png");
+		background-image: url("/@{plugin-url}/images/fu-logo-text-2x_226_17.png");
 		background-repeat: no-repeat;	
 		display: block;
 		min-width: 226px;
@@ -45,7 +46,7 @@
 
 @media(min-width: 992px) {
 	#fu_logo {
-		background-image: url("/@{myurl}/images/fu-logo-1x_226.png");
+		background-image: url("/@{plugin-url}/images/fu-logo-1x_226.png");
 		background-repeat: no-repeat;	
 		display:block;
 		min-width:  226px;
@@ -58,7 +59,7 @@
 
 @media(min-width: 1200px) {
 	#fu_logo {
-		background-image: url("/@{myurl}/images/fu-logo-1x.png");
+		background-image: url("/@{plugin-url}/images/fu-logo-1x.png");
 		background-repeat: no-repeat;
 		display:block;
 		min-width: 375px;
