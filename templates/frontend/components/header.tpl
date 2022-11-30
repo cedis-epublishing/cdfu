@@ -59,9 +59,14 @@
 							{* Primary navigation menu for current application *}
 							{$primaryMenu}
 
-							{if $currentContext}
-								{* Search form *}
-								{include file="frontend/components/searchForm_simple.tpl"}
+{* Search form *}
+							{if $currentContext && $requestedPage !== 'search'}
+								<div class="pkp_navigation_search_wrapper">
+									<a href="{url page="search"}" class="pkp_search pkp_search_desktop">
+										<span class="fa fa-search" aria-hidden="true"></span>
+										{translate key="common.search"}
+									</a>
+								</div>
 							{/if}
 						</div>
 					</nav>

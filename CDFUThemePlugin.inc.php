@@ -22,11 +22,18 @@ class CDFUThemePlugin extends ThemePlugin {
 	 * @return null
 	 */
 	public function init() {
+
+		// Initialize the parent theme
 		$this->setParent('defaultthemeplugin');
+
+		// Remove options of the parent theme
 		$this->removeOption('baseColour');
-		$this->removeOption('typography');	
+		$this->removeOption('typography');
+
+		// Add custom styles
+		$this->modifyStyle('stylesheet', array('addLess' => array('styles/cdfu.less')));
 		//$this->modifyStyle('stylesheet', array('addLess' => array('styles/cdfu.less')));
-		$this->addStyle('cdfu', 'styles/cdfu.less');
+		//$this->addStyle('cdfu', 'styles/cdfu.less');
 		
 		$additionalLessVariables = array();		
 		$additionalLessVariables[] = '@text-bg-base: #333;';
@@ -34,7 +41,7 @@ class CDFUThemePlugin extends ThemePlugin {
 		$additionalLessVariables[] = '@primary: #06c;';
 		$additionalLessVariables[] = '@primary-lift: #06c;';		
 		if (!empty($additionalLessVariables)) {
-			$this->modifyStyle('stylesheet', array('addLessVariables' => join($additionalLessVariables)));
+			$this->modifyStyle('stylesheet', array('addLessVariables' => join('', $additionalLessVariables)));
 		}
 	}
 
